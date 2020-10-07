@@ -5,10 +5,7 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment
 import org.apache.flink.streaming.api.{CheckpointingMode, TimeCharacteristic}
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment
-import org.apache.flink.table.api.{EnvironmentSettings, FieldExpression}
-import org.apache.flink.api.scala._
-import org.apache.flink.table.api._
-import org.apache.flink.table.api.bridge.scala._
+import org.apache.flink.table.api.{EnvironmentSettings, FieldExpression, _}
 import org.apache.flink.table.functions.ScalarFunction
 
 case class Bitcoin(hash: String, ts: String, amount: String)
@@ -35,10 +32,9 @@ object Bitcoin {
     val taux = env.addSource(kafka_source_taux)
 
     val tableBit = tEnv.fromDataStream(bitcoin, $"line")
-    val tBit = tableBit.addOrReplaceColumns($"line".regexpReplace("{|}", "")).addColumns($"line")
+    val tBit = tableBit.addOrReplaceColumns($"line".regexpReplace("{|}", ""))
 
     tBit.printSchema()
-    env.execute("Bitcoin")
   }
 
   def removeCurly(str: String): String = {
