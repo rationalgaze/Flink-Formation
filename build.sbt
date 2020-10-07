@@ -1,7 +1,5 @@
-
-name := "bitcoin"
-
 lazy val commonSettings = Seq(
+  name := "flink-formation",
   version := "0.0.1",
   organization := "com.altran",
   scalaVersion := "2.11.12",
@@ -20,6 +18,7 @@ lazy val dependencies = new {
   val flinkTablePlannerBlink = "org.apache.flink" %% "flink-table-planner-blink" % flinkVersion % "provided"
   val flinkTablePlanner = "org.apache.flink" %% "flink-table-planner" % flinkVersion % "provided"
   val flinkClients = "org.apache.flink" %% "flink-clients" % flinkVersion
+  val flinkGelly = "org.apache.flink" %% "flink-gelly" % flinkVersion
   val rabbitmq = "org.apache.flink" %% "flink-connector-rabbitmq" % flinkVersion
 }
 
@@ -58,6 +57,13 @@ lazy val wiki = project.
   settings(
     name := "wiki",
     libraryDependencies ++= flinkDependencies
+  )
+
+lazy val gelly = project.
+  settings(commonSettings: _*).
+  settings(
+    libraryDependencies ++= flinkDependencies,
+    libraryDependencies += dependencies.flinkGelly
   )
 
 lazy val bitcoin = project.
