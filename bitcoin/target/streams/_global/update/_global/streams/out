@@ -1,0 +1,4 @@
+[debug] not up to date. inChanged = true, force = false
+[debug] Updating bitcoin...
+[debug] Done updating bitcoin
+[warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.

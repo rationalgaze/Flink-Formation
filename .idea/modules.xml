@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bitcoin-build.iml" filepath="$PROJECT_DIR$/.idea/modules/bitcoin-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bitcoin.bitcoin.iml" filepath="$PROJECT_DIR$/.idea/modules/bitcoin.bitcoin.iml" group="bitcoin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/root.iml" filepath="$PROJECT_DIR$/.idea/modules/root.iml" group="bitcoin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wiki.iml" filepath="$PROJECT_DIR$/.idea/modules/wiki.iml" />
+    </modules>
+  </component>
+</project>
